@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {quotes} from "../components/dashboard/Quotes";
 import Quotes from "../components/dashboard/Quotes";
+import Track from "../components/dashboard/Track";
 import {
   LayoutDashboard,
   FileText,
@@ -90,7 +91,7 @@ export default function DashboardPage() {
         </div>
       </aside>
 
-      {/* Main arae */}
+      {/* Main area */}
       <div className="lg:ml-[250px] min-h-screen">
 
         {/* Top header */}
@@ -141,8 +142,10 @@ export default function DashboardPage() {
         {/* Content */}
         <main className="p-5 sm:p-8 max-w-[1500px]">
           {/* QUOTE REQUESTS PAGE */}
-          
-          {activePage === "Quote Requests" ? (
+          {activePage ==="Track Quote" ?
+          (
+            <Track/>
+          ): activePage === "Quote Requests" ? (
             <Quotes/>
           ) :activePage ==="Dashboard" ? (
             <>
@@ -369,8 +372,8 @@ export default function DashboardPage() {
 
                   </button>
 
-
-                  <button className="text-left p-5 bg-white border border-gray-200 rounded-xl hover:border-[#D4AF37] hover:shadow-md transition">
+                  <button onClick={()=> setActivePage("Track Quote")}
+                  className="text-left p-5 bg-white border border-gray-200 rounded-xl hover:border-[#D4AF37] hover:shadow-md transition">
 
                     <MapPin
                       size={22}
