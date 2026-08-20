@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {quotes} from "../components/dashboard/Quotes";
 import Quotes from "../components/dashboard/Quotes";
 import Track from "../components/dashboard/Track";
+import Saved from "../components/dashboard/Saved";
 import {
   LayoutDashboard,
   FileText,
@@ -147,7 +148,9 @@ export default function DashboardPage() {
             <Track/>
           ): activePage === "Quote Requests" ? (
             <Quotes/>
-          ) :activePage ==="Dashboard" ? (
+          ): activePage === "Saved Designs" ?(
+            <Saved/>
+          ): activePage ==="Dashboard" ? (
             <>
   
             {/* Welcome */}
@@ -391,7 +394,8 @@ export default function DashboardPage() {
                   </button>
 
 
-                  <button className="text-left p-5 bg-white border border-gray-200 rounded-xl hover:border-[#D4AF37] hover:shadow-md transition">
+                  <button onClick={()=> setActivePage("Saved Designs")}
+                  className="text-left p-5 bg-white border border-gray-200 rounded-xl hover:border-[#D4AF37] hover:shadow-md transition">
 
                     <Heart
                       size={22}
