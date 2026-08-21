@@ -3,6 +3,7 @@ import {quotes} from "../components/dashboard/Quotes";
 import Quotes from "../components/dashboard/Quotes";
 import Track from "../components/dashboard/Track";
 import Saved from "../components/dashboard/Saved";
+import Profile from "../components/dashboard/Profile";
 import {
   LayoutDashboard,
   FileText,
@@ -150,7 +151,10 @@ export default function DashboardPage() {
             <Quotes/>
           ): activePage === "Saved Designs" ?(
             <Saved/>
-          ): activePage ==="Dashboard" ? (
+          ): activePage === "Profile" ?(
+            <Profile/>
+          ):
+          activePage ==="Dashboard" ? (
             <>
   
             {/* Welcome */}
